@@ -63,6 +63,8 @@
 
 ## 五、修复建议
 ```
+1. 降到安全版本
+
 # 卸载恶意版本
 
 npm uninstall axios
@@ -96,5 +98,6 @@ npm ci --ignore-scripts
 ## 六、参考来源
 
 1. 突发！Axios 遭供应链投毒，36亿年下载量JS库沦陷，全平台面临远控风险（附自查/修复全教程）                   （https://blog.csdn.net/weixin_68340504/article/details/159717437）
-2. Axios 供应链投毒事件响应：腾讯云安全已完成主动排查与风险防护升级                                                   （https://cloud.tencent.com/developer/article/2651941）
+2. Axios 供应链投毒事件响应：腾讯云安全已完成主动排查与风险防护升级
+（https://cloud.tencent.com/developer/article/2651941）
 
