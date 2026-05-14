@@ -54,7 +54,47 @@
 
 ## 四、关联报告风险点
 
+对应《AI生成代码在野安全风险研究报告》第3章3.3节——安全文化侵蚀以及5.2节——人工智能引入的脆弱性风险概况
 
+​此事件中，攻击者在盗取开源依赖维护者的账号的基础上，趁机将植入远程后门控制的病毒的依赖组件包替换成官方的干净库，从而导致一些高权限同时开发者对其“自动化偏见”的AI Agent在无审核默认自动安装的前提下，安装了带有病毒的axios依赖库，这种不对依赖库进行安全审核的行为，使得安全文化的侵蚀（报告3.3节——安全文化侵蚀）达到了触及基础设施安全的程度。
 
+​在报告的5.2节中，揭示了 AI 引入的漏洞呈现出更危险的结构性偏好——网络化倾向（Networking Tendency）。本案例中，Agent的底层配置默认直接通过npm发起网络下载，且安装时setup.js解码后
+后台会从下载C2服务器下载对应不同平台的恶意文件，这种远程攻击风险给系统防御造成了巨大的应对压力。总的来说，这些种种让攻击者有了可乘之机，给数百万开发者用户带来深远影响。
 
+## 五、修复建议
+```
+# 卸载恶意版本
+
+npm uninstall axios
+
+# 安装安全版本（eg.1.14.0 或 0.30.3）
+
+npm install axios@1.14.0
+
+全局修复：
+
+npm uninstall -g axios
+
+npm install -g axios@1.14.0
+
+2. 清理恶意依赖
+
+# 删除 plain-crypto-js
+
+rm -rf node_modules/plain-crypto-js
+
+# 清理 npm 缓存
+
+npm cache clean --x
+
+# 重新安装（--ignore-scripts 阻止 postinstall 脚本执行）
+
+npm ci --ignore-scripts
+
+```
+
+## 六、参考来源
+
+1. 突发！Axios 遭供应链投毒，36亿年下载量JS库沦陷，全平台面临远控风险（附自查/修复全教程）（https://blog.csdn.net/weixin_68340504/article/details/159717437）
+2. Axios 供应链投毒事件响应：腾讯云安全已完成主动排查与风险防护升级 （https://cloud.tencent.com/developer/article/2651941）
 
