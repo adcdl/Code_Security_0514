@@ -34,7 +34,7 @@
 * Windows：通过 cmd.exe 调用 curl 下载 PowerShell 脚本至临时目录，以隐藏窗口绕过执行策略运行 powershell，随后自删除临时文件；
 * Linux：通过 curl 下载 Python 脚本至 /tmp/ld.py，使用 nohup 在后台静默执行，并将输出重定向至 /dev/null。
 
-<img width="887" height="248" alt="image" src="https://github.com/user-attachments/assets/42984d88-6167-4ba0-88b7-df4228c7d978" />
+<img width="887" height="248" alt="image" src="assets/1.png" />
 
 ### 安装后：痕迹清除
 
