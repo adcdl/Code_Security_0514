@@ -1,6 +1,23 @@
 # Code_Security_0514
 
-# 36亿年下载量 Axios 遭供应链投毒，你的“龙虾”还安全吗？
+# Axios Supply Chain Poisoning Incident Affecting OpenClaw AI Agent(2026)
+> Axios 开源库供应链投毒事件（波及 OpenClaw AI Agent）
+
+| Field | Value |
+|---|---|
+| Category | supply-chain |
+| Severity | critical |
+| AI Tool | OpenClaw |
+| Language | JavaScript |
+| Real Incident | ✅ |
+| Reproducible | ❌ |
+| Disclosed | 2026-04 |
+| CVE | — |
+| CVSS | — |
+
+## TL;DR
+In 2026, official Axios releases were compromised via account hijacking, injecting a malicious dependency to enable cross-platform remote control. OpenClaw 3.28 shipped with the poisoned Axios version by default, exposing the AI Agent ecosystem to widespread supply-chain risks.
+> 2026年Axios官方版本遭账号劫持投毒，植入恶意依赖实现跨平台远控，OpenClaw 3.28默认依赖带毒版本，AI Agent生态面临大规模供应链风险。
 
 ## 基本信息
 
@@ -97,7 +114,7 @@ npm ci --ignore-scripts
 
 ## 六、参考来源
 
-1. 突发！Axios 遭供应链投毒，36亿年下载量JS库沦陷，全平台面临远控风险（附自查/修复全教程）                   （https://blog.csdn.net/weixin_68340504/article/details/159717437）
-2. Axios 供应链投毒事件响应：腾讯云安全已完成主动排查与风险防护升级
+* 突发！Axios 遭供应链投毒，36亿年下载量JS库沦陷，全平台面临远控风险（附自查/修复全教程）                   （https://blog.csdn.net/weixin_68340504/article/details/159717437）
+* Axios 供应链投毒事件响应：腾讯云安全已完成主动排查与风险防护升级
 （https://cloud.tencent.com/developer/article/2651941）
 
